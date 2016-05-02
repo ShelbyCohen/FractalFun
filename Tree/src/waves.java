@@ -157,7 +157,7 @@ public class waves {
         }
 
     }
-    public static void drawCircle(double xPos, double yPos, double size, double lastSize, int minSize, int maxSize, int n){
+    public static void drawCircle(double xPos, double yPos, double size, double lastSize, double minSize, double maxSize, int n){
         //don't let circles go above
         double maxY = 30*Math.sin(0.02*(xPos + 130)) + 90;
 
@@ -174,15 +174,19 @@ public class waves {
             else if ((lastSize < size && size < maxSize)||(lastSize > size && size < minSize)){
                 newSize = size*1.25;
             }
+            //randomize newSize a little
+            //newSize += (Math.random()*newSize/10)-(Math.random()*newSize/5);
             color = (int)((newSize/maxSize)*155)+50;
+            color = color>255?255:color;
             //StdDraw.setPenColor(0,0,color);
             StdDraw.setPenColor(0,0,color);
             //System.out.println(color);
+            double offset = newSize/2 + size/2;
 
-            if (yPos == -100)
-                drawCircle(xPos + size * 2, yPos, newSize, size, minSize, maxSize, n);
+            if (true)//(yPos == -100)
+                drawCircle(xPos + offset, yPos, newSize, size, minSize, maxSize, n);
             if (true){
-                drawCircle(xPos,yPos+size*2,newSize,size,minSize,maxSize,99);
+                drawCircle(xPos,yPos+offset,newSize,size,minSize,maxSize,99);
             }
         }
     }
@@ -190,10 +194,9 @@ public class waves {
         StdDraw.setXscale(-130, 130);
         StdDraw.setYscale(-130, 130);
 
-        int maxWidth = 10;
-        int minWidth = 2;
-        drawCircle(-120, -100, 3, 2, minWidth, maxWidth, 0);
-        //drawCircle(-120, -100, 2, 3, minWidth, maxWidth, 0);
+        int maxWidth = 3;
+        int minWidth = 1;
+        drawCircle(-120, -100, 1, 2, minWidth, maxWidth, 0);
     }
         /*StdDraw.circle(double x, double y, double radius);
 
