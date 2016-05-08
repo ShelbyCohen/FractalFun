@@ -174,14 +174,25 @@ public class waves {
             else if ((lastSize < size && size < maxSize)||(lastSize > size && size < minSize)){
                 newSize = size*1.25;
             }
+            //for top of water
+
             //randomize newSize a little
-            //newSize += (Math.random()*newSize/10)-(Math.random()*newSize/5);
+            newSize += (Math.random()*newSize/16)-(Math.random()*newSize/8);
             color = (int)((newSize/maxSize)*155)+50;
             color = color>255?255:color;
-            //StdDraw.setPenColor(0,0,color);
             StdDraw.setPenColor(0,0,color);
-            //System.out.println(color);
             double offset = newSize/2 + size/2;
+
+
+            //for under water
+
+            //randomize newSize a little
+            /*newSize += (Math.random()*newSize/2)-(Math.random()*newSize/4);
+            color = (int)((newSize/maxSize)*60)+134; //was when it was blue
+            //color = color>255?255:color;
+            StdDraw.setPenColor(136,color,255);
+            double offset = newSize/2 + size/2;*/
+
 
             if (true)//(yPos == -100)
                 drawCircle(xPos + offset, yPos, newSize, size, minSize, maxSize, n);
