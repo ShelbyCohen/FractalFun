@@ -14,19 +14,19 @@ public class test {
         }
         //semi-con
 
-
-        /*if(Math.random() > .6 ){
+/*
+        if(Math.random() > .6 ){
             theta = ((Math.PI/2.0)-theta);
 
-        }*/
+        }
+*/
 
 
-
-        /*//rand angles
+        //rand angles
         if(Math.random() > .6 ){
             theta = ((Math.PI/(3+2*Math.random())));
 
-        }*/
+        }
 
         //square
 
@@ -171,7 +171,7 @@ public class test {
 
         double pi = Math.PI;
 
-        double theta = pi/5;
+        double theta = 2*pi/3;
         int squareWidth = 2;
         int squareHeight = 18;
         int squareX = 0;
