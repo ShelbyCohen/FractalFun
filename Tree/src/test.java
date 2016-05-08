@@ -179,7 +179,7 @@ public class test {
 
         double[] xVals = {squareX-squareWidth,squareX+squareWidth,squareX+squareWidth,squareX-squareWidth};
         double[] yVals = {squareY-squareHeight,squareY-squareHeight,squareY+squareHeight,squareY+squareHeight};
-        //drawGradient(158,211,255,1,48,152,1100);
+        drawGradient(0,255,0,0,255,0,10);
         StdDraw.setPenColor(153,83,26);
         StdDraw.filledPolygon(xVals,yVals);
 
